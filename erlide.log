@@ -19,3 +19,5 @@
 15:58:57,107 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
 15:58:57,357 F: (ModelActivator.java:30) : Started model api
 15:58:57,373 I: (ErlideUIPlugin.java:154) : Started UI
+16:02:46,325 F: (OtpNodeProxy.java:311) : Runtime ddee5_ewh502_51fa4a_erlide@PC620S.its.york.ac.uk stopping
+16:02:46,356 F: (OtpNodeProxy.java:271) : Runtime ddee5_ewh502_51fa4a_erlide@PC620S.its.york.ac.uk terminated
