@@ -1,0 +1,21 @@
+14:01:38,478 I: (ErlangCore.java:64) : Starting CORE Thread[Worker-7,5,main]
+14:01:38,493 I: (ErlangCore.java:79) : *** starting Erlide v0.29.13.201509181435 (core=0.24.13.201509181435) (model api=0.24.12.201509181435) *** (Cp1252) ui
+14:01:38,509 I: (ErlangCore.java:86) : Started CORE
+14:01:38,509 F: (ErlangPlugin.java:88) : Core started
+14:01:39,478 F: (ErlangHostnameRetriever.java:40) : Test long hostname: PC620S.its.york.ac.uk
+14:01:39,823 F: (ErlangHostnameRetriever.java:40) : Test short hostname: PC620S
+14:01:39,823 F: (HostnameUtils.java:74) : Detected:: PC620S && PC620S.its.york.ac.uk
+14:01:39,886 F: (BackendActivator.java:25) : Backend plugin started
+14:01:39,901 I: (ErlideUIPlugin.java:132) : Starting UI Thread[Worker-7,5,main]
+14:01:39,901 F: (ModelActivator.java:19) : Starting Erlang model api
+14:01:39,948 F: (BackendFactory.java:42) : Create ide backend 18.0.0
+14:01:39,948 F: (BackendFactory.java:56) : Create backend ddee5_ewh502_e69d6c_erlide
+14:01:40,151 F: (OtpNodeProxy.java:301) : Runtime ddee5_ewh502_e69d6c_erlide@PC620S.its.york.ac.uk starting
+14:01:40,151 F: (OtpNodeProxy.java:419) : START node :> ["c:\program files\erl7.0/bin/erl", -name, ddee5_ewh502_e69d6c_erlide@PC620S.its.york.ac.uk, -setcookie, erlide] *** H:\2nd Year Modules\SEPR\HelloWorld
+14:01:40,198 F: (OtpNodeProxy.java:212) : ddee5_ewh502_e69d6c_erlide@PC620S.its.york.ac.uk: waiting connection to peer... 
+14:01:40,604 F: (OtpNodeProxy.java:219) : connected!
+14:01:40,729 F: (OtpNodeProxy.java:306) : Runtime ddee5_ewh502_e69d6c_erlide@PC620S.its.york.ac.uk running
+14:01:41,010 F: (LogEventHandler.java:27) : info: {"Monitoring java node",'jerlide_ae69e46@PC620S.its.york.ac.uk'}
+14:01:41,010 F: (LogEventHandler.java:27) : info: {"Start monitor process: ",10000000,50000000}
+14:01:41,275 F: (ModelActivator.java:30) : Started model api
+14:01:41,275 I: (ErlideUIPlugin.java:154) : Started UI
