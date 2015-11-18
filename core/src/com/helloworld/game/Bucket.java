@@ -6,7 +6,7 @@ public class Bucket {
 	private float xVelocity, yVelocity;
 	private Rectangle box;
 	private float maxVelocity = 300;
-	private String testagain = "howzis?";
+	private String testagain = "howzis?", testing = "howzat?";
 	public Bucket(){
 		xVelocity = 0;
 		yVelocity = 0;
