@@ -39,16 +39,22 @@ public class HelloWorld extends ApplicationAdapter {
 		batch.draw(bucketImage, bucket.getX(), bucket.getY());
 		font.draw(batch, "HelloWorld", 200, 200);
 		batch.end();
+		movement();
+		
+	}
+	private void movement(){
 		if(Gdx.input.isKeyPressed(Keys.A)) {
 			if (bucket.getXVelocity() > 50){
 				bucket.setXVelocity(50);
 			}
 			bucket.changeXVelocity(-accel*Gdx.graphics.getDeltaTime());
+			checkEdgeCollision();
 		}else if(Gdx.input.isKeyPressed(Keys.D)) {
 			if (bucket.getXVelocity() < -50){
 				bucket.setXVelocity(-50);
 			}
 			bucket.changeXVelocity(accel*Gdx.graphics.getDeltaTime());
+			checkEdgeCollision();
 		}else{
 			if(!Gdx.input.isKeyPressed(Keys.A)){
 				if (bucket.getXVelocity() > 0){
@@ -73,26 +79,32 @@ public class HelloWorld extends ApplicationAdapter {
 				bucket.setYVelocity(-50);
 			}
 			bucket.changeYVelocity(accel*Gdx.graphics.getDeltaTime());
-		}else if(Gdx.input.isKeyPressed(Keys.S)) {
+			checkEdgeCollision();
+			if(Gdx.input.isKeyPressed(Keys.S)){
+				bucket.setYVelocity(0);
+			}
+		}else{
+			if (bucket.getYVelocity() > 0){
+				bucket.changeYVelocity(-decel*Gdx.graphics.getDeltaTime());
+				if (bucket.getYVelocity() < 0){
+					bucket.setYVelocity(0);
+				}
+			}
+		}
+		if(Gdx.input.isKeyPressed(Keys.S)) {
 			if (bucket.getYVelocity() > 50){
 				bucket.setYVelocity(50);
 			}
 			bucket.changeYVelocity(-accel*Gdx.graphics.getDeltaTime());
-		}else{
-			if(!Gdx.input.isKeyPressed(Keys.W)){
-				if (bucket.getYVelocity() > 0){
-					bucket.changeYVelocity(-decel*Gdx.graphics.getDeltaTime());
-					if (bucket.getYVelocity() < 0){
-						bucket.setYVelocity(0);
-					}
-				}
+			checkEdgeCollision();
+			if(Gdx.input.isKeyPressed(Keys.W)){
+				bucket.setYVelocity(0);
 			}
-			if(!Gdx.input.isKeyPressed(Keys.S)){
-				if (bucket.getYVelocity() < 0){
-					bucket.changeYVelocity(decel*Gdx.graphics.getDeltaTime());
-					if (bucket.getYVelocity() > 0){
-						bucket.setYVelocity(0);
-					}
+		}else{
+			if (bucket.getYVelocity() < 0){
+				bucket.changeYVelocity(decel*Gdx.graphics.getDeltaTime());
+				if (bucket.getYVelocity() > 0){
+					bucket.setYVelocity(0);
 				}
 			}
 		}
@@ -100,11 +112,14 @@ public class HelloWorld extends ApplicationAdapter {
 			bucket.setXVelocity(0);
 			bucket.setYVelocity(0);
 		}
+		checkEdgeCollision();
+		bucket.setX(bucket.getX() + bucket.getXVelocity()*Gdx.graphics.getDeltaTime());
+		bucket.setY(bucket.getY() + bucket.getYVelocity()*Gdx.graphics.getDeltaTime());
+	}
+	private void checkEdgeCollision(){
 		if(bucket.getX() < 0) {bucket.setX(0); bucket.setXVelocity(0);}
 		if(bucket.getX() > 800 - 64) {bucket.setX(800-64); bucket.setXVelocity(0);}
 		if(bucket.getY() < 0) {bucket.setY(0); bucket.setYVelocity(0);}
 		if(bucket.getY() > 400 - 64) {bucket.setY(400-64); bucket.setYVelocity(0);}
-		bucket.setX(bucket.getX() + bucket.getXVelocity()*Gdx.graphics.getDeltaTime());
-		bucket.setY(bucket.getY() + bucket.getYVelocity()*Gdx.graphics.getDeltaTime());
 	}
 }
